@@ -1,0 +1,35 @@
+Raspi-Edge
+==========
+
+Welcome to Raspy-Edge, the Raspberry Pi Edge-Router distribution.
+
+The official installer supports Linux on Raspberry Pi and Banana Pi, arm-hf architectures.
+
+Features
+--------
+
+  * IPv6 support
+
+What Raspi-Edge contains
+------------------------
+Raspi-Edge currently comes with the following software:
+
+  * tunslip6
+  * radvd
+  
+
+
+Quick introduction
+------------------
+
+The following example illustrates how simple Raspi-Edge is to use. First install the package matching your operating system:
+
+# curl https://install.raspyedge.com/raspy-edge.sh | sh
+
+or
+
+# wget https://install.raspyedge.com/raspy-edge.sh
+# sudo sh raspy-edge.sh
+
+have fun :-)
+
