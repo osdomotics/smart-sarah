@@ -5,9 +5,9 @@ echo 0 > /proc/sys/net/ipv6/conf/default/accept_ra
 echo 1 > /proc/sys/net/ipv6/conf/eth0/accept_ra
 
 # get panid from uboot
-  panid="AAAC"
+  panid="abcd"
 # get lowpanprefix from uboot
-  lowpanprefix="aaad::"
+  lowpanprefix="aaaa::"
 # start daemon
 #tunslip6 -B 115200 -L -v3 -s ttyFIM0 aaaa::1/64 &
 /usr/sbin/tunslip6 -B 38400 -L -v3 -s ttyAMA0 ${lowpanprefix}1/64 &
