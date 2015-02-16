@@ -1,12 +1,13 @@
+
 #!/bin/sh
 #$Id$
 
 updateApt()
 {
 	echo "\nUpdate Apt..."
-	read -p "apt-get update (j/n)? " update
+	read -p "apt-get update (y/n)? " update
 	case "$update" in
-				j)	sudo apt-get -y update
+				y)	sudo apt-get -y update
 					;;
 				n)	echo "Close..."
 					;;
@@ -18,9 +19,9 @@ updateApt()
 upgradeApt()
 {
 	echo "\nUpgrade Apt..."
-	read -p "apt-get upgrade (j/n)? " upgrade
+	read -p "apt-get upgrade (y/n)? " upgrade
 	case "$upgrade" in
-				j)	sudo apt-get -y upgrade
+				y)	sudo apt-get -y upgrade
 					;;
 				n)	echo "Close..."
 					;;
@@ -38,7 +39,7 @@ IPV6()
 tunslip6()
 {
 	echo "\nInstall Tunslip6..."
-	sudo wget https://raw.githubusercontent.com/osdomotics/osd-contiki/master/tools/tunslip6.c
+	sudo wget --no-check-certificate https://raw.githubusercontent.com/osdomotics/osd-contiki/master/tools/tunslip6.c
 	sudo gcc tunslip6.c -o tunslip6
 	sudo chmod 766 tunslip6
 	sudo cp tunslip6 /usr/sbin/
@@ -81,10 +82,10 @@ radvd()
     cd $dir2
 }
 
-read -p "Do you want to install Raspi-Edge-Package (j/n)? " response
+read -p "Do you want to install Raspi-Edge-Package (y/n)? " response
 
 case "$response" in
-	j) 	echo "\nInstall Raspi-Edge-Package..."
+	y) 	echo "\nInstall Raspi-Edge-Package..."
 		
 		dir1=`pwd`
         #echo "dir1= " $dir1
@@ -103,10 +104,10 @@ case "$response" in
 		serial
 		radvd
 		echo "\nIf you want to use the full functionality, it is important to reboot your System."
-		read -p "Do you want to reboot your System. (j/n)? " reboot
+		read -p "Do you want to reboot your System. (y/n)? " reboot
 		
 			case "$reboot" in
-				j)	sudo reboot 
+				y)	sudo reboot 
 					;;
 				n)	echo "Close..."
 					;;
