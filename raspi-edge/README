@@ -24,12 +24,7 @@ Quick introduction
 
 The following example illustrates how simple Raspi-Edge is to use. First install the package matching your operating system:
 
-# curl https://install.raspyedge.com/raspy-edge.sh | sh
-
-or
-
-# wget https://install.raspyedge.com/raspy-edge.sh
-# sudo sh raspy-edge.sh
+# sudo sh edge_install_script.sh
 
 have fun :-)
 
