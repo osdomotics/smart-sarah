@@ -61,13 +61,25 @@ nodeRed()
 					sudo npm install node-red-contrib-coap
 					echo "\nInstall COAP- Cli..."
 					sudo npm install coap-cli -g
+					echo "\n Install Start Script"
+					cd $dir1
+					cd $dir2
+					pwd
+					cd init.d
+					echo "\n chmod...."
+					sudo chmod a+x node-red
+					cd ..
+					echo "\n cp...."
+					sudo cp init.d/node-red /etc/init.d/node-red
+					sudo insserv node-red
+					echo "\n check...."
+					cd node-red
 					;;
 				n)	echo "Close..."
 					;;
 				*)	echo "false input"
 					;;
 			esac
-	
 }
 
 
@@ -91,6 +103,7 @@ case "$response" in
 		upgradeApt
 		nodejs
 		nodeRed
+		
 		sudo node red.js
 		;;
 	n)	echo "Close..."
