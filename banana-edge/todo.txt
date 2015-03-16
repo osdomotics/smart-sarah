@@ -1,0 +1,19 @@
+Basics
+
+ok    ipv6 support
+ok    tunslip6 compile and install
+ok    radvd install paket
+ok    uart config and test
+ok    tunslip6 Verbindung aufbauen mit Merkurboard
+todo  IPv6 prefixes vergeben lassen
+todo  install tools -> sudo apt-get install git gcc build-essential
+
+Advanced
+
+todo    libcoap, coap-client
+todo    OMD Open Monitoring Distribution
+todo    CoapNagios Plugins
+todo    Config Nagios
+
+happy :-)
+
