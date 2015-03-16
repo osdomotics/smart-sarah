@@ -63,6 +63,8 @@ nodeRed()
 					sudo npm install node-red-contrib-coap
 					echo "\nInstall COAP- Cli..."
 					sudo npm install coap-cli -g
+					sudo npm install redis -g
+					sudo npm install mongodb -g
 					echo "\n Install Start Script"
 					cd $dir1
 					cd $dir2
