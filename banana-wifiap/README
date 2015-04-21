@@ -1,0 +1,94 @@
+WiFi AP mode
+
+If you want to use the AP mode of the AP6181 WiFi module on the Banana Pro, you can refer to the instructions below.
+
+Edit the /etc/modules
+
+Edit the /etc/modules file, and add the content below into the file:
+
+ap6210 op_mode=2
+
+Download and compile the hostapd
+
+git clone git://w1.fi/srv/git/hostap.git
+sudo apt-get install libnl-dev
+sudo apt-get install openssl
+sudo apt-get install libssl-dev
+cd hostap/hostapd
+cp defconfig .config
+make
+cp hostapd /usr/local/bin
+
+Create and edit the hostapd.conf
+
+mkdir -p /etc/hostapd
+nano /etc/hostapd/hostapd.conf
+
+Add the content below into the hostapd.conf file:
+
+interface=wlan0
+driver=nl80211
+ssid=ap6210_ap_test
+channel=6
+hw_mode=g
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=3
+wpa_passphrase=12345678
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+
+You can change the ssid and wpa_passphrase.
+Edit the network interfaces
+
+nano /etc/network/interfaces
+
+Replace the content below:
+
+auto lo
+iface lo inet loopback
+iface eth0 inet dhcp
+
+allow-hotplug wlan0
+iface wlan0 inet static
+address 192.168.100.1
+netmask 255.255.255.0
+
+Enable the DHCP server
+Install the DHCP server
+
+sudo apt-get install udhcpd
+
+Edit the udhcpd.conf
+
+nano /etc/udhcpd.conf
+
+Add the content below into the file:
+#The start and end of the IP lease block
+start    192.168.100.101    #default: 192.168.0.20
+end      192.168.100.254   #default: 192.168.0.254
+#The interface that udhcpd will use
+interface   wlan0     #default: eth0
+#Examles
+option  subnet  255.255.255.0
+opt     router  192.168.100.1
+opt     wins    192.168.100.1
+option  dns     192.168.100.1
+option  domain  local
+ption  lease   864000
+
+Reboot and restart the server
+
+Run the DHCP server:
+
+udhcpd /etc/udhcpd.conf
+
+Run the hostapd:
+
+hostapd -B /etc/hostapd/hostapd.conf
+
+And then you can check the result:
+
+iwconfig
