@@ -4,9 +4,9 @@
 updateApt()
 {
 	echo "\nUpdate Apt..."
-	read -p "apt-get update (j/n)? " update
+	read -p "apt-get update (y/n)? " update
 	case "$update" in
-				j)	sudo apt-get -y update
+				y)	sudo apt-get -y update
 					;;
 				n)	echo "Close..."
 					;;
@@ -18,9 +18,9 @@ updateApt()
 upgradeApt()
 {
 	echo "\nUpgrade Apt..."
-	read -p "apt-get upgrade (j/n)? " upgrade
+	read -p "apt-get upgrade (y/n)? " upgrade
 	case "$upgrade" in
-				j)	sudo apt-get -y upgrade
+				y)	sudo apt-get -y upgrade
 					;;
 				n)	echo "Close..."
 					;;
@@ -32,9 +32,9 @@ upgradeApt()
 expandfile()
 {
 	echo "\nExpand Filesystem..."
-	read -p "Do you want to expand your Filesystem (j/n)? " expandfile
+	read -p "Do you want to expand your Filesystem (y/n)? " expandfile
 	case "$expandfile" in
-				j)	echo "Its important to reboot afterwards and start the script again"
+				y)	echo "Its important to reboot afterwards and start the script again"
 					sudo raspi-config
 					;;
 				n)	echo "Close..."
@@ -47,9 +47,9 @@ expandfile()
 omd()
 {
 #	echo "\nExpand Filesystem..."
-	read -p "Install OMD (j/n)? " omd
+	read -p "Install OMD (y/n)? " omd
 	case "$omd" in
-				j)	echo "\nInstall OMD..."
+				y)	echo "\nInstall OMD..."
 					mkdir omd
 					cd omd
 					wget http://labs.consol.de/repo/stable/debian/dists/wheezy/main/binary-armhf/omd-1.00_0.wheezy_armhf.deb
@@ -70,9 +70,9 @@ omd()
 coap()
 {
 #	echo "\nExpand Filesystem..."
-	read -p "Install COAP (j/n)? " coap
+	read -p "Install COAP (y/n)? " coap
 	case "$coap" in
-				j)	echo "\nInstall coap..."
+				y)	echo "\nInstall coap..."
 					sudo apt-get -y install libnagios-plugin-perl libnetaddr-ip-perl 
 					echo "\nInstall apache2-mpm-prefork..."
 					sudo apt-get -y install apache2-mpm-prefork
@@ -107,9 +107,9 @@ coap()
 checkcoap()
 {
 #	echo "\nExpand Filesystem..."
-	read -p "Install CheckCOAP (j/n)? " checkcoap
+	read -p "Install CheckCOAP (y/n)? " checkcoap
 	case "$checkcoap" in
-				j)	sudo omd create mysite
+				y)	sudo omd create mysite
 	
 					cd $dir1
 					cd $dir2
@@ -137,10 +137,10 @@ checkcoap()
 }
 
 
-read -p "Do you want to install Open Monitoring Distribution (j/n)? " response
+read -p "Do you want to install Open Monitoring Distribution (y/n)? " response
 
 case "$response" in
-	j) 	echo "\nInstall OMD-Package..."
+	y) 	echo "\nInstall OMD-Package..."
 		
 		dir1=`pwd`
         #echo "dir1= " $dir1

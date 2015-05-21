@@ -4,9 +4,9 @@
 updateApt()
 {
 	echo "\nUpdate Apt..."
-	read -p "apt-get update (j/n)? " update
+	read -p "apt-get update (y/n)? " update
 	case "$update" in
-				j)	sudo apt-get -y update
+				y)	sudo apt-get -y update
 					;;
 				n)	echo "Close..."
 					;;
@@ -18,9 +18,9 @@ updateApt()
 upgradeApt()
 {
 	echo "\nUpgrade Apt..."
-	read -p "apt-get upgrade (j/n)? " upgrade
+	read -p "apt-get upgrade (y/n)? " upgrade
 	case "$upgrade" in
-				j)	sudo apt-get -y upgrade
+				y)	sudo apt-get -y upgrade
 					;;
 				n)	echo "Close..."
 					;;
@@ -32,9 +32,9 @@ upgradeApt()
 nodejs()
 {
 #	echo "\nInstall Node.js..."
-	read -p "\nDo you want to install Node.js (j/n)? " nodejs
+	read -p "\nDo you want to install Node.js (y/n)? " nodejs
 	case "$nodejs" in
-				j)	echo "\nInstall Node.js..."
+				y)	echo "\nInstall Node.js..."
                                         sudo curl -sL https://deb.nodesource.com/setup | bash -
                                         sudo apt-get install python nodejs
 #					sudo wget http://node-arm.herokuapp.com/node_0.10.36_armhf.deb
@@ -51,9 +51,9 @@ nodejs()
 nodeRed()
 {
 #	echo "\nExpand Filesystem..."
-	read -p "\nInstall Node-Red (j/n)? " nodeRed
+	read -p "\nInstall Node-Red (y/n)? " nodeRed
 	case "$nodeRed" in
-				j)	echo "\nInstall Node-Red..."
+				y)	echo "\nInstall Node-Red..."
 					sudo apt-get install git-core
 					git clone https://github.com/node-red/node-red.git
 					cd node-red
@@ -89,10 +89,10 @@ nodeRed()
 
 
 
-read -p "Do you want to install Node-Red (j/n)? " response
+read -p "Do you want to install Node-Red (y/n)? " response
 
 case "$response" in
-	j) 	echo "\nInstall Node-Red-Package..."
+	y) 	echo "\nInstall Node-Red-Package..."
 		
 		dir1=`pwd`
         #echo "dir1= " $dir1
