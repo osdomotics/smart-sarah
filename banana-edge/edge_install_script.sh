@@ -38,6 +38,7 @@ IPV6()
 tunslip6()
 {
 	echo "\nInstall Tunslip6..."
+	sudo apt-get install build-essential
 	sudo wget https://raw.githubusercontent.com/osdomotics/osd-contiki/master/tools/tunslip6.c
 	sudo gcc tunslip6.c -o tunslip6
 	sudo chmod 766 tunslip6
