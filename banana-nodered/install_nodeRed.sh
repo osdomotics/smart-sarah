@@ -31,14 +31,11 @@ upgradeApt()
 
 nodejs()
 {
-#	echo "\nInstall Node.js..."
 	read -p "\nDo you want to install Node.js (y/n)? " nodejs
 	case "$nodejs" in
 				y)	echo "\nInstall Node.js..."
                                         sudo curl -sL https://deb.nodesource.com/setup | bash -
-                                        sudo apt-get install python nodejs
-#					sudo wget http://node-arm.herokuapp.com/node_0.10.36_armhf.deb
-#					sudo dpkg -i node_0.10.36_armhf.deb
+                                        sudo apt-get install -y build-essential python-dev nodejs
 					node -v
 					;;
 				n)	echo "Close..."
@@ -54,32 +51,18 @@ nodeRed()
 	read -p "\nInstall Node-Red (y/n)? " nodeRed
 	case "$nodeRed" in
 				y)	echo "\nInstall Node-Red..."
-				    sudo npm install -g grunt-cli
-					sudo apt-get install git-core
-					git clone https://github.com/node-red/node-red.git
-					cd node-red
-					echo "\nInstall..."
-					sudo npm install
-					echo "\nInstall COAP- Node-Red..."
-					sudo npm install node-red-contrib-coap
+				        sudo npm cache clean
 					echo "\nInstall COAP- Cli..."
 					sudo npm install coap-cli -g
 					sudo npm install redis -g
-					sudo npm install mongodb -g
-					sudo grunt build
+					sudo npm install mongodb -g					sudo npm install -g node-red
+					echo "\nInstall COAP- Node-Red..."
+					sudo npm install -g node-red-contrib-coap
 					echo "\n Install Start Script"
-					cd $dir1
-					cd $dir2
-					pwd
-					cd init.d
-					echo "\n chmod...."
-					sudo chmod a+x node-red
-					cd ..
-					echo "\n cp...."
-					sudo cp init.d/node-red /etc/init.d/node-red
-					sudo insserv node-red
-					echo "\n check...."
-					cd node-red
+					sudo npm install -g pm2
+                                        sudo pm2 start /usr/bin/node-red --node-args="--max-old-space-size=128" -- -v
+                                        sudo pm2 save
+                                        sudo pm2 startup
 					;;
 				n)	echo "Close..."
 					;;
