@@ -23,7 +23,7 @@ SCRIPT_DIR='/home/pi/smart-sarah/banana-nodered/node-red/'
  
 # DONT'T CHANGE unless you know what you're doing
 NAME=node-red
-DAEMON=/usr/local/bin/node
+DAEMON=/usr/bin/node
 OPTIONS="--max-old-space-size=64 red.js"
 LOG='/var/log/node-red.log'
  
