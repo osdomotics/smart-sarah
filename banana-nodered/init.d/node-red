@@ -18,7 +18,7 @@
 # else the log won't be writtable
 USER=root
 # The location of Node-RED
-SCRIPT_DIR='/home/pi/banana-nodered/node-red/'
+SCRIPT_DIR='/home/pi/smart-sarah/banana-nodered/node-red/'
  
  
 # DONT'T CHANGE unless you know what you're doing
