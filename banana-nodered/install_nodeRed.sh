@@ -54,6 +54,7 @@ nodeRed()
 	read -p "\nInstall Node-Red (y/n)? " nodeRed
 	case "$nodeRed" in
 				y)	echo "\nInstall Node-Red..."
+				    sudo npm install -g grunt-cli
 					sudo apt-get install git-core
 					git clone https://github.com/node-red/node-red.git
 					cd node-red
@@ -65,6 +66,7 @@ nodeRed()
 					sudo npm install coap-cli -g
 					sudo npm install redis -g
 					sudo npm install mongodb -g
+					sudo grunt build
 					echo "\n Install Start Script"
 					cd $dir1
 					cd $dir2
