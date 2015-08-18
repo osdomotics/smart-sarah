@@ -6,7 +6,7 @@ updateApt()
 	echo "\nUpdate Apt..."
 	read -p "apt-get update (y/n)? " update
 	case "$update" in
-				y)	sudo apt-get -y update
+				y)	apt-get -y update
 					;;
 				n)	echo "Close..."
 					;;
@@ -20,7 +20,7 @@ upgradeApt()
 	echo "\nUpgrade Apt..."
 	read -p "apt-get upgrade (y/n)? " upgrade
 	case "$upgrade" in
-				y)	sudo apt-get -y upgrade
+				y)	apt-get -y upgrade
 					;;
 				n)	echo "Close..."
 					;;
@@ -32,7 +32,7 @@ upgradeApt()
 IPV6()
 {
 	echo "\nUse IPv6..."
-	sudo cp modprobe.d/ipv6.conf /etc/modprobe.d/ipv6.conf						#git link
+	cp modprobe.d/ipv6.conf /etc/modprobe.d/ipv6.conf						#git link
 }
 
 tunslip6()
@@ -107,7 +107,7 @@ case "$response" in
 		read -p "Do you want to reboot your System. (y/n)? " reboot
 		
 			case "$reboot" in
-				y)	sudo reboot 
+				y)	reboot 
 					;;
 				n)	echo "Close..."
 					;;
