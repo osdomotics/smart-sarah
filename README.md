@@ -23,6 +23,12 @@ Go and download the latest version from the official site https://www.bananian.o
 Quickstart
 ----------
 
+banana-pro:
+
+    login as root
+    apt-get install git
+    git clone https://github.com/osdomotics/smart-sarah.git
+  
 
 Supported Hardware
 ------------------
