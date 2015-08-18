@@ -32,7 +32,7 @@ upgradeApt()
 IPV6()
 {
 	echo "\nUse IPv6..."
-	cp modprobe.d/ipv6.conf /etc/modprobe.d/ipv6.conf						#git link
+	cp modprobe.d/ipv6.conf /etc/modprobe.d/ipv6.conf
 }
 
 tunslip6()
@@ -43,7 +43,7 @@ tunslip6()
 	gcc tunslip6.c -o tunslip6
 	chmod 766 tunslip6
 	cp tunslip6 /usr/sbin/
-	cp sbin/tunslip6.sh /usr/sbin/tunslip6.sh						#git link
+	cp sbin/tunslip6.sh /usr/sbin/tunslip6.sh
 	cd /usr/sbin/
 	chmod 766 tunslip6.sh
 	cd $dir1
@@ -53,7 +53,7 @@ tunslip6()
 tunslip6Daemon()
 {
 	echo "\nInstall Tunslip6 Daemon..."
-	cp init.d/tunslip6 /etc/init.d/tunslip6							#git link
+	cp init.d/tunslip6 /etc/init.d/tunslip6
 	cd /etc/init.d/
 	chmod a+x tunslip6
 	#echo "\n insserv tunslip6"
@@ -66,20 +66,17 @@ serial()
 {
 	echo "\nSerial activated..."
 	#cd /etc/
-	cp etc/inittab /etc/inittab										#git link
+	cp etc/inittab /etc/inittab
 	#cd /boot/
-	cp boot/cmdline.txt /boot/cmdline.txt							#git link
+	cp boot/cmdline.txt /boot/cmdline.txt
 }
 
 radvd()
 {
 	echo "\nInstall RADVD..."
 	apt-get install -y radvd
-	cp etc/radvd.conf /etc/radvd.conf								#git link
-	cd /etc/init.d
-	radvd start
-	cd $dir1
-    cd $dir2
+	cp etc/radvd.conf /etc/radvd.conf
+        service radvd start
 }
 
 read -p "Do you want to install Raspi-Edge-Package (y/n)? " response
