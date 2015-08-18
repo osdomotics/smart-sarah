@@ -94,8 +94,6 @@ case "$response" in
 		upgradeApt
 		nodejs
 		nodeRed
-		
-		sudo node red.js
 		;;
 	n)	echo "Close..."
 		;;
