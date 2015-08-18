@@ -38,14 +38,14 @@ IPV6()
 tunslip6()
 {
 	echo "\nInstall Tunslip6..."
-	sudo apt-get install build-essential
-	sudo wget https://raw.githubusercontent.com/osdomotics/osd-contiki/master/tools/tunslip6.c
-	sudo gcc tunslip6.c -o tunslip6
-	sudo chmod 766 tunslip6
-	sudo cp tunslip6 /usr/sbin/
-	sudo cp sbin/tunslip6.sh /usr/sbin/tunslip6.sh						#git link
+	apt-get install build-essential
+	wget https://raw.githubusercontent.com/osdomotics/osd-contiki/master/tools/tunslip6.c
+	gcc tunslip6.c -o tunslip6
+	chmod 766 tunslip6
+	cp tunslip6 /usr/sbin/
+	cp sbin/tunslip6.sh /usr/sbin/tunslip6.sh						#git link
 	cd /usr/sbin/
-	sudo chmod 766 tunslip6.sh
+	chmod 766 tunslip6.sh
 	cd $dir1
     cd $dir2
 }
@@ -53,11 +53,11 @@ tunslip6()
 tunslip6Daemon()
 {
 	echo "\nInstall Tunslip6 Daemon..."
-	sudo cp init.d/tunslip6 /etc/init.d/tunslip6							#git link
+	cp init.d/tunslip6 /etc/init.d/tunslip6							#git link
 	cd /etc/init.d/
-	sudo chmod a+x tunslip6
+	chmod a+x tunslip6
 	#echo "\n insserv tunslip6"
-	sudo insserv tunslip6
+	insserv tunslip6
 	cd $dir1
     cd $dir2	
 }
@@ -66,18 +66,18 @@ serial()
 {
 	echo "\nSerial activated..."
 	#cd /etc/
-	sudo cp etc/inittab /etc/inittab										#git link
+	cp etc/inittab /etc/inittab										#git link
 	#cd /boot/
-	sudo cp boot/cmdline.txt /boot/cmdline.txt							#git link
+	cp boot/cmdline.txt /boot/cmdline.txt							#git link
 }
 
 radvd()
 {
 	echo "\nInstall RADVD..."
-	sudo apt-get install -y radvd
-	sudo cp etc/radvd.conf /etc/radvd.conf								#git link
+	apt-get install -y radvd
+	cp etc/radvd.conf /etc/radvd.conf								#git link
 	cd /etc/init.d
-	sudo radvd start
+	radvd start
 	cd $dir1
     cd $dir2
 }
