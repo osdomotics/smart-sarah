@@ -11,9 +11,7 @@ Services
     OMD (Open Monitoring Distribution)
     Linwebknx (Home Automation Software)
     Node-Red (A visual web-tool for wiring the Internet of Things)
-    
-    todo:
-    Meteor-js deploy server     
+    Meteor-js deploy server (run a meteor app on a banana pi/pro)    
 
 Requirements
 ------------
