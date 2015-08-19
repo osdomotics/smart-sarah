@@ -18,7 +18,7 @@ Requirements
 
 banana-pro:
 
-Go and download the latest version from the official site https://www.bananian.org/download Burn the image file to your SD card following the instruction on that website, that has to be at least 2GB.
+Go and download the latest version from the official site https://www.bananian.org/download Flash the image file to your SD card following the instruction on that website, that has to be at least 2GB.
 
 Quickstart
 ----------
