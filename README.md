@@ -34,7 +34,8 @@ Supported Hardware
 ------------------
 
     Raspberry pi 2
-    Lemaker Banana Pro
+    Banana pi
+    Banana pro
 
 
 Planned
@@ -43,5 +44,3 @@ Planned
     Olimex A10-Lime
     Olimex A20-Lime
     Olimex A20-Lime2
-
-
