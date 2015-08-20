@@ -11,16 +11,14 @@ Services
     OMD (Open Monitoring Distribution)
     Linwebknx (Home Automation Software)
     Node-Red (A visual web-tool for wiring the Internet of Things)
-    
-    todo:
-    Meteor-js deploy server     
+    Meteor-js deploy server (run a meteor app on a banana pi/pro)    
 
 Requirements
 ------------
 
 banana-pro:
 
-Go and download the latest version from the official site https://www.bananian.org/download Burn the image file to your SD card following the instruction on that website, that has to be at least 2GB.
+Go and download the latest version from the official site https://www.bananian.org/download Flash the image file to your SD card following the instruction on that website, that has to be at least 2GB.
 
 Update to debian jessie:
 
@@ -45,7 +43,8 @@ Supported Hardware
 ------------------
 
     Raspberry pi 2
-    Lemaker Banana Pro
+    Banana pi
+    Banana pro
 
 
 Planned
@@ -54,5 +53,3 @@ Planned
     Olimex A10-Lime
     Olimex A20-Lime
     Olimex A20-Lime2
-
-
