@@ -22,6 +22,15 @@ banana-pro:
 
 Go and download the latest version from the official site https://www.bananian.org/download Burn the image file to your SD card following the instruction on that website, that has to be at least 2GB.
 
+Update to debian jessie:
+
+1.) sed -i 's/wheezy/jessie/g' /etc/apt/sources.list
+2.) apt-get update
+3.) apt-get upgrade
+4.) apt-get dist-upgrade
+5.) shutdown -r now
+
+
 Quickstart
 ----------
 
