@@ -22,11 +22,11 @@ Go and download the latest version from the official site https://www.bananian.o
 
 Update to debian jessie:
 
-1.) sed -i 's/wheezy/jessie/g' /etc/apt/sources.list
-2.) apt-get update
-3.) apt-get upgrade
-4.) apt-get dist-upgrade
-5.) shutdown -r now
+    1.) sed -i 's/wheezy/jessie/g' /etc/apt/sources.list
+    2.) apt-get update
+    3.) apt-get upgrade
+    4.) apt-get dist-upgrade
+    5.) shutdown -r now
 
 
 Quickstart
