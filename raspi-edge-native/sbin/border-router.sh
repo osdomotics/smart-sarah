@@ -10,7 +10,7 @@ echo 1 > /proc/sys/net/ipv6/conf/eth0/accept_ra
   lowpanprefix="aaaa::"
 # start daemon
 #border-router.native -B 115200 -L -v2 -s ttyACM0 aaaa::1/64 &
-/usr/sbin/border-router.native -B 115200 -L -v2 -s ttyACM0 ${lowpanprefix}1/64 &
+/usr/sbin/border-router.native -B 115200 -L -v2 -s ttyACM0 ${lowpanprefix}1/64 > /var/log/border-router &
 sleep 10
 ifconfig tun0 inet  up
 #ifconfig tun0 fe80::1/64
