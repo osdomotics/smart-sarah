@@ -1,0 +1,34 @@
+Raspi-Edge-native
+=================
+
+Welcome to Raspy-Edge, the Raspberry Pi Edge-Router distribution.
+
+The official installer supports Linux on Raspberry Pi and Banana Pi, arm-hf architectures.
+
+Stick
+-----
+
+Needs a USB-6LoWPAN-Stick with slip-radio firmware and 115200 Boud
+
+Features
+--------
+
+  * IPv6 support
+
+What Raspi-Edge-native contains
+-------------------------------
+
+Raspi-Edge currently comes with the following software:
+
+  * boarder-router.native
+  * radvd
+  
+
+Quick introduction
+------------------
+
+The following example illustrates how simple Raspi-Edge is to use. First install the package matching your operating system:
+
+# sudo sh edge_install_script.sh
+
+have fun :-)
