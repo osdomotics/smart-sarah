@@ -36,7 +36,7 @@ IPV6()
 	cp modprobe.d/ipv6.conf /etc/modprobe.d/ipv6.conf						#git link
 }
 
-border-router()
+BorderRouter()
 {
 	echo "\nInstall border-router.native ..."
 	chmod 766 sbin/border-router.native
