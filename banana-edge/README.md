@@ -1,9 +1,30 @@
-# README #
+Banana-Edge
+==========
 
-Mit dem Install-Skript kann ein Edge-Router auf Ihren Raspberry Pi installiert werden.
-Dazu wird ein Merkurboard mit der entsprechenden Firmware benötigt.
+Welcome to Banan-Edge, the Banana-Pro Edge-Router distribution.
 
-Weitere Informationen gibt es unter: [www.osdomotics.com](http://www.osdomotics.com/)
+The official installer supports Linux on Banana Pi, arm-hf architectures.
 
-Den Raspi_Edge_Router finden Sie unter: 
-**Smart-SARAH am Raspberry Pi** unter **edge-router** [**hier**](http://osdwiki.open-entry.com/doku.php/de:projekte:smart-sarah:raspberry)
+Features
+--------
+
+  * IPv6 support
+
+What Banana-Edge contains
+------------------------
+Banana-Edge currently comes with the following software:
+
+  * tunslip6
+  * radvd
+  
+
+Quick introduction
+------------------
+
+The following example illustrates how simple Banan-Edge is to use. 
+First install the package matching your operating system:
+
+# sudo sh edge_install_script.sh
+
+have fun :-)
+
