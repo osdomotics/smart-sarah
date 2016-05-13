@@ -3,16 +3,15 @@
 
 omd()
 {
-#	echo "\nExpand Filesystem..."
 	read -p "Install OMD (y/n)? " omd
 	case "$omd" in
 				y)	echo "\nInstall OMD..."
 					# Add our key:
-					gpg --recv-keys 24BFF712
-					gpg --armor --export 24BFF712 | apt-key add -
+					#gpg --recv-keys 24BFF712
+					#gpg --armor --export 24BFF712 | apt-key add -
 					# Add our repository for Debian 8 (jessie):
 					echo "deb http://dl.bananian.org/packages/ jessie main" > /etc/apt/sources.list.d/bananian.list
-					apt-get -y install omd-1.20
+					apt-get -y install omd-1.30
 					echo "\n Install OMD- END"
 					;;
 				n)	echo "Close..."
@@ -25,7 +24,6 @@ omd()
 
 coap()
 {
-#	echo "\nExpand Filesystem..."
 	read -p "Install COAP (y/n)? " coap
 	case "$coap" in
 				y)	echo "\nInstall coap..."
@@ -60,21 +58,17 @@ coap()
 
 checkcoap()
 {
-#	echo "\nExpand Filesystem..."
 	read -p "Install CheckCOAP (y/n)? " checkcoap
 	case "$checkcoap" in
 				y)	omd create mysite
-	
 					cd $dir1
 					cd $dir2
-					
 					git clone https://github.com/osdomotics/check_coap.git
 					cd check_coap/
 					cp check_coap* /omd/sites/mysite/lib/nagios/plugins/
 					cd nagios-conf.d/
 					cp coap_templates.cfg /omd/sites/mysite/etc/nagios/conf.d/
-					cp triops.cfg /omd/sites/mysite/etc/nagios/conf.d/	
-					
+					cp triops.cfg /omd/sites/mysite/etc/nagios/conf.d/
 					cd $dir1
 					cd $dir2
 					pwd
