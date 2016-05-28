@@ -19,7 +19,7 @@ Requirements
 
 Banana-Pro:
 
-Bananian Linux 15.08 released - 2015-08-22
+Bananian Linux 16.04 released - 2016-04-23
 
 Go and download the latest version from the official site https://www.bananian.org/download Flash the image file to your SD card following the instruction on that website, that has to be at least 2GB.
 
