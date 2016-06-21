@@ -8,7 +8,7 @@ The official installer supports Linux on Raspberry Pi and Banana Pi, arm-hf arch
 Features
 --------
 
-  * IPv6 support
+  * IPv6 support with 6lowpan and rpl routing
 
 What Raspi-Edge contains
 ------------------------

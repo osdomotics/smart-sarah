@@ -4,46 +4,22 @@
 
 updateApt()
 {
-	echo "\nUpdate Apt..."
-	read -p "apt-get update (y/n)? " update
-	case "$update" in
-				y)	sudo apt-get -y update
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
+    sudo apt-get -y update
 }
 
 upgradeApt()
 {
-	echo "\nUpgrade Apt..."
-	read -p "apt-get upgrade (y/n)? " upgrade
-	case "$upgrade" in
-				y)	sudo apt-get -y upgrade
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
-}
-
-IPV6()
-{
-	echo "\nUse IPv6..."
-	sudo cp modprobe.d/ipv6.conf /etc/modprobe.d/ipv6.conf						#git link
+    sudo apt-get -y upgrade
 }
 
 tunslip6()
 {
 	echo "\nInstall Tunslip6..."
-	sudo wget --no-check-certificate https://raw.githubusercontent.com/osdomotics/osd-contiki/master/tools/tunslip6.c
+	sudo wget https://raw.githubusercontent.com/osdomotics/osd-contiki/master/tools/tunslip6.c
 	sudo gcc tunslip6.c -o tunslip6
 	sudo chmod 766 tunslip6
 	sudo cp tunslip6 /usr/sbin/
-	sudo cp sbin/tunslip6.sh /usr/sbin/tunslip6.sh						#git link
+	sudo cp sbin/tunslip6.sh /usr/sbin/tunslip6.sh
 	cd /usr/sbin/
 	sudo chmod 766 tunslip6.sh
 	cd $dir1
@@ -53,7 +29,7 @@ tunslip6()
 tunslip6Daemon()
 {
 	echo "\nInstall Tunslip6 Daemon..."
-	sudo cp init.d/tunslip6 /etc/init.d/tunslip6							#git link
+	sudo cp init.d/tunslip6 /etc/init.d/tunslip6
 	cd /etc/init.d/
 	sudo chmod a+x tunslip6
 	#echo "\n insserv tunslip6"
@@ -65,17 +41,15 @@ tunslip6Daemon()
 serial()
 {
 	echo "\nSerial activated..."
-	#cd /etc/
-	sudo cp etc/inittab /etc/inittab										#git link
-	#cd /boot/
-	sudo cp boot/cmdline.txt /boot/cmdline.txt							#git link
+	sudo cp etc/inittab /etc/inittab
+	sudo cp boot/cmdline.txt /boot/cmdline.txt
 }
 
 radvd()
 {
 	echo "\nInstall RADVD..."
 	sudo apt-get install -y radvd
-	sudo cp etc/radvd.conf /etc/radvd.conf								#git link
+	sudo cp etc/radvd.conf /etc/radvd.conf
 	cd /etc/init.d
 	sudo radvd start
 	cd $dir1
@@ -98,7 +72,6 @@ case "$response" in
 
 		updateApt
 		upgradeApt
-		IPV6
 		tunslip6
 		tunslip6Daemon
 		serial
