@@ -3,36 +3,12 @@
 
 updateApt()
 {
-	echo "\nUpdate Apt..."
-	read -p "apt-get update (y/n)? " update
-	case "$update" in
-				y)	apt-get -y update
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
+    pt-get -y update
 }
 
 upgradeApt()
 {
-	echo "\nUpgrade Apt..."
-	read -p "apt-get upgrade (y/n)? " upgrade
-	case "$upgrade" in
-				y)	apt-get -y upgrade
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
-}
-
-IPV6()
-{
-	echo "\nUse IPv6..."
-	cp modprobe.d/ipv6.conf /etc/modprobe.d/ipv6.conf
+    apt-get -y upgrade
 }
 
 tunslip6()
@@ -62,21 +38,12 @@ tunslip6Daemon()
     cd $dir2	
 }
 
-serial()
-{
-	echo "\nSerial activated..."
-	#cd /etc/
-	cp etc/inittab /etc/inittab
-	#cd /boot/
-	cp boot/cmdline.txt /boot/cmdline.txt
-}
-
 radvd()
 {
 	echo "\nInstall RADVD..."
 	apt-get install -y radvd
 	cp etc/radvd.conf /etc/radvd.conf
-        service radvd start
+    service radvd start
 }
 
 read -p "Do you want to install Raspi-Edge-Package (y/n)? " response
@@ -91,14 +58,11 @@ case "$response" in
 
         cd $dir1
         cd $dir2
-        #pwd
 
 		updateApt
 		upgradeApt
-		#IPV6
 		tunslip6
 		tunslip6Daemon
-		#serial
 		radvd
 		echo "\nIf you want to use the full functionality, it is important to reboot your System."
 		read -p "Do you want to reboot your System. (y/n)? " reboot

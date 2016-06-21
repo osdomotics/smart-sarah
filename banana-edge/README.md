@@ -3,7 +3,7 @@ Banana-Edge
 
 Welcome to Banan-Edge, the Banana-Pro Edge-Router distribution.
 
-The official installer supports Linux on Banana Pi, arm-hf architectures.
+The official installer supports Linux on Banana Pi/Pro, arm-hf architectures.
 
 Features
 --------
