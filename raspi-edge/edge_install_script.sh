@@ -5,35 +5,13 @@
 updateApt()
 {
 	echo "\nUpdate Apt..."
-	read -p "apt-get update (y/n)? " update
-	case "$update" in
-				y)	sudo apt-get -y update
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
+	apt-get -y update
 }
 
 upgradeApt()
 {
 	echo "\nUpgrade Apt..."
-	read -p "apt-get upgrade (y/n)? " upgrade
-	case "$upgrade" in
-				y)	sudo apt-get -y upgrade
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
-}
-
-IPV6()
-{
-	echo "\nUse IPv6..."
-	sudo cp modprobe.d/ipv6.conf /etc/modprobe.d/ipv6.conf						#git link
+	sudo apt-get -y upgrade
 }
 
 tunslip6()
@@ -98,7 +76,6 @@ case "$response" in
 
 		updateApt
 		upgradeApt
-		IPV6
 		tunslip6
 		tunslip6Daemon
 		serial
@@ -118,6 +95,5 @@ case "$response" in
 	n)	echo "Close..."
 		;;
 	*)	echo "false input"
-		;;
-	
+		;;	
 esac
