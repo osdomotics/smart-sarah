@@ -15,13 +15,12 @@ upgradeApt()
 tunslip6()
 {
 	echo "\nInstall Tunslip6..."
-	wget https://raw.githubusercontent.com/osdomotics/osd-contiki/master/tools/tunslip6.c
-	gcc tunslip6.c -o tunslip6
+	wget https://github.com/osdomotics/osd-contiki/archive/osd.zip
+    unzip osd.zip
+	cd osd-contiki-osd/tools/
+	make tunslip6
 	chmod 766 tunslip6
 	cp tunslip6 /usr/sbin/
-	cp sbin/tunslip6.sh /usr/sbin/tunslip6.sh
-	cd /usr/sbin/
-	chmod 766 tunslip6.sh
 	cd $dir1
     cd $dir2
 }
@@ -29,11 +28,8 @@ tunslip6()
 tunslip6Daemon()
 {
 	echo "\nInstall Tunslip6 Daemon..."
-	cp init.d/tunslip6 /etc/init.d/tunslip6
-	cd /etc/init.d/
-	chmod a+x tunslip6
-	#echo "\n insserv tunslip6"
-	sudo insserv tunslip6
+    cp system/tunslip6.service /lib/systemd/system/
+    systemctl enable tunslip6.service
 	cd $dir1
     cd $dir2	
 }
@@ -41,8 +37,9 @@ tunslip6Daemon()
 serial()
 {
 	echo "\nSerial activated..."
-	cp etc/inittab /etc/inittab
 	cp boot/cmdline.txt /boot/cmdline.txt
+	cd $dir1
+    cd $dir2	
 }
 
 radvd()
@@ -50,8 +47,7 @@ radvd()
 	echo "\nInstall RADVD..."
 	apt-get install -y radvd
 	cp etc/radvd.conf /etc/radvd.conf
-	cd /etc/init.d
-	radvd start
+	service radvd start
 	cd $dir1
     cd $dir2
 }
