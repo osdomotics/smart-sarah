@@ -34,10 +34,11 @@ banana-pro:
 
 Raspberry Pi 3:
 
-    login as root
     wget https://github.com/osdomotics/smart-sarah/archive/master.zip
     unzip master.zip
-  
+    cd smart-sarah-master/raspi-edge/
+    sudo su
+    ./edge_install_script.sh
 
 Supported Hardware
 ------------------
