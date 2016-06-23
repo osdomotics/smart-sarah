@@ -26,18 +26,23 @@ Go and download the latest version from the official site https://www.bananian.o
 
 Quickstart
 ----------
-
 banana-pro:
 
     login as root
     apt-get install git
     git clone https://github.com/osdomotics/smart-sarah.git
+
+Raspberry Pi 3:
+
+    login as root
+    wget https://github.com/osdomotics/smart-sarah/archive/master.zip
+    unzip master.zip
   
 
 Supported Hardware
 ------------------
 
-    Raspberry pi 2
+    Raspberry Pi 3
     Banana pi
     Banana pro
 
