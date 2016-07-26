@@ -37,8 +37,11 @@ tunslip6Daemon()
 serial()
 {
 	echo "\nSerial activated..."
+        systemctl stop serial-getty@ttyS0.service
+        systemctl disable serial-getty@ttyS0.service
 	cp boot/cmdline.txt /boot/cmdline.txt
-	cd $dir1
+    	cp boot/config.txt  /boot/config.txt
+    cd $dir1
     cd $dir2
 }
 
