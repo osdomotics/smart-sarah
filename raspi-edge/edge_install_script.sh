@@ -4,7 +4,7 @@
 
 updateApt()
 {
-	apt-get -y update
+    apt-get -y update
 }
 
 upgradeApt()
@@ -27,11 +27,11 @@ tunslip6()
 
 tunslip6Daemon()
 {
-	echo "\nInstall Tunslip6 Daemon..."
+    echo "\nInstall Tunslip6 Daemon..."
     cp system/tunslip6.service /lib/systemd/system/
     systemctl enable tunslip6.service
-	cd $dir1
-    cd $dir2	
+    cd $dir1
+    cd $dir2
 }
 
 serial()
@@ -39,11 +39,14 @@ serial()
 	echo "\nSerial activated..."
 	cp boot/cmdline.txt /boot/cmdline.txt
 	cd $dir1
-    cd $dir2	
+    cd $dir2
 }
+
 
 radvd()
 {
+        echo "\neth0 Static IPv6..."
+        cp interfaces.d/eth0 /etc/interfaces.d/eth0
 	echo "\nInstall RADVD..."
 	apt-get install -y radvd
 	cp etc/radvd.conf /etc/radvd.conf
