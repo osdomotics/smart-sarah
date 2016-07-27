@@ -49,7 +49,7 @@ serial()
 radvd()
 {
         echo "\neth0 Static IPv6..."
-        cp interfaces.d/eth0 /etc/interfaces.d/eth0
+        cp interfaces.d/eth0 /etc/network/interfaces.d/eth0
 	echo "\nInstall RADVD..."
 	apt-get install -y radvd
 	cp etc/radvd.conf /etc/radvd.conf
