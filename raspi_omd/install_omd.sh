@@ -72,8 +72,8 @@ checkcoap()
         cd check_coap/
         sudo cp check_coap* /omd/sites/mysite/lib/nagios/plugins/
         cd nagios-conf.d/
-        sudo cp coap_templates.cfg /omd/sites/mysite/etc/nagios/conf.d/
-        sudo cp triops.cfg /omd/sites/mysite/etc/nagios/conf.d/	
+#        sudo cp coap_templates.cfg /omd/sites/mysite/etc/nagios/conf.d/
+        sudo cp sarah_hosts.cfg /omd/sites/mysite/etc/nagios/conf.d/	
         
         cd $dir1
         cd $dir2

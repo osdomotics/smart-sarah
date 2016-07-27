@@ -36,8 +36,8 @@ checkcoap()
         cd check_coap/
         cp check_coap* /omd/sites/mysite/lib/nagios/plugins/
         cd nagios-conf.d/
-        cp coap_templates.cfg /omd/sites/mysite/etc/nagios/conf.d/
-        cp triops.cfg /omd/sites/mysite/etc/nagios/conf.d/
+#        cp coap_templates.cfg /omd/sites/mysite/etc/nagios/conf.d/
+        cp sarah_hosts.cfg /omd/sites/mysite/etc/nagios/conf.d/
         echo "\n Install CHECKCOAP- END"
 }
 
