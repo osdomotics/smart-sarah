@@ -1,13 +1,14 @@
 #!/bin/sh
 #$Id$
 
-omd()
+instomd()
 {
         # Add our key:
-        #gpg --recv-keys 24BFF712
-        #gpg --armor --export 24BFF712 | apt-key add -
+        gpg --recv-keys 24BFF712
+        gpg --armor --export 24BFF712 | apt-key add -
         # Add our repository for Debian 8 (jessie):
         echo "deb http://dl.bananian.org/packages/ jessie main" > /etc/apt/sources.list.d/bananian.list
+        apt-get -y update
         apt-get -y install omd-1.30
         echo "\n Install OMD- END"
 }
@@ -56,7 +57,7 @@ case "$response" in
         cd $dir2
         #pwd
 
-		omd
+		instomd
 		coap
 		checkcoap
 		omd restart
