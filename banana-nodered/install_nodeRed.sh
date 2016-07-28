@@ -24,6 +24,7 @@ nodejs()
 nodeRed()
 {
 					echo "\nInstall..."
+					apt-get -y install mogodb-server
 				        npm cache clean
 					echo "\nInstall COAP- Cli..."
 					npm install coap-cli -g
@@ -33,6 +34,8 @@ nodeRed()
 					npm install -g node-red
 					echo "\nInstall COAP- Node-Red..."
 					npm install -g node-red-contrib-coap
+					echo "\nInstall mongodb2- Node-Red..."
+					npm install node-red-contrib-mongodb2
 					echo "\n Install Start Script"
 					npm install -g pm2
                                         pm2 start /usr/local/bin/node-red --node-args="--max-old-space-size=128" -- -v
