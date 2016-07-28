@@ -35,9 +35,9 @@ nodeRed()
 					npm install -g node-red-contrib-coap
 					echo "\n Install Start Script"
 					npm install -g pm2
-                                        pm2 start /usr/bin/node-red --node-args="--max-old-space-size=128" -- -v
+                                        pm2 start /usr/local/bin/node-red --node-args="--max-old-space-size=128" -- -v
                                         pm2 save
-                                        pm2 startup
+                                        pm2 startup systemd
 }
 
 
