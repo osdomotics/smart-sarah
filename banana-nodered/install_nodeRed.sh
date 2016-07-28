@@ -3,54 +3,27 @@
 
 updateApt()
 {
-	echo "\nUpdate Apt..."
-	read -p "apt-get update (y/n)? " update
-	case "$update" in
-				y)	apt-get -y update
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
+	apt-get -y update
 }
 
 upgradeApt()
 {
-	echo "\nUpgrade Apt..."
-	read -p "apt-get upgrade (y/n)? " upgrade
-	case "$upgrade" in
-				y)	apt-get -y upgrade
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
+	apt-get -y upgrade
 }
 
 nodejs()
 {
-	read -p "\nDo you want to install Node.js (y/n)? " nodejs
-	case "$nodejs" in
-				y)	echo "\nInstall Node.js..."
-                                        curl -sL https://deb.nodesource.com/setup | bash -
-                                        apt-get install -y build-essential python-dev nodejs
-					node -v
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
+
+        apt-get -y install nodejs npm
+        npm cache clean -f
+        npm install -g n
+        n stable
+        npm install -g npm@2.x
 }
 
 nodeRed()
 {
-#	echo "\nExpand Filesystem..."
-	read -p "\nInstall Node-Red (y/n)? " nodeRed
-	case "$nodeRed" in
-				y)	echo "\nInstall..."
+					echo "\nInstall..."
 				        npm cache clean
 					echo "\nInstall COAP- Cli..."
 					npm install coap-cli -g
@@ -65,12 +38,6 @@ nodeRed()
                                         pm2 start /usr/bin/node-red --node-args="--max-old-space-size=128" -- -v
                                         pm2 save
                                         pm2 startup
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
 }
 
 
