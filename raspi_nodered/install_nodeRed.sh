@@ -3,83 +3,46 @@
 
 updateApt()
 {
-	echo "\nUpdate Apt..."
-	read -p "apt-get update (y/n)? " update
-	case "$update" in
-				y)	sudo apt-get -y update
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
+	apt-get -y update
 }
 
 upgradeApt()
 {
-	echo "\nUpgrade Apt..."
-	read -p "apt-get upgrade (y/n)? " upgrade
-	case "$upgrade" in
-				y)	sudo apt-get -y upgrade
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
+	apt-get -y upgrade
 }
 
 nodejs()
 {
-#	echo "\nInstall Node.js..."
-	read -p "\nDo you want to install Node.js (y/n)? " nodejs
-	case "$nodejs" in
-				y)	echo "\nInstall Node.js..."
-					sudo wget http://node-arm.herokuapp.com/node_latest_armhf.deb
-					sudo dpkg -i node_latest_armhf.deb
-					node -v
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
+
+        apt-get -y install nodejs npm
+        npm cache clean -f
+        npm install -g n
+        n stable
+        npm install -g npm@2.x
 }
 
 nodeRed()
 {
-#	echo "\nExpand Filesystem..."
-	read -p "\nInstall Node-Red (y/n)? " nodeRed
-	case "$nodeRed" in
-				y)	echo "\nInstall Node-Red..."
-					sudo apt-get install git-core
-					git clone https://github.com/node-red/node-red.git
-					cd node-red
 					echo "\nInstall..."
-					sudo npm install
-					echo "\nInstall COAP- Node-Red..."
-					sudo npm install node-red-contrib-coap
+					apt-get -y install mongodb-server
+				        npm cache clean
 					echo "\nInstall COAP- Cli..."
-					sudo npm install coap-cli -g
+					npm install coap-cli -g
+					npm install redis -g
+					npm install mongodb -g
+                                        echo "\nInstall Node-Red..."
+					npm install -g node-red
+					echo "\nInstall COAP- Node-Red..."
+					npm install -g node-red-contrib-coap
+					echo "\nInstall mongodb2- Node-Red..."
+					npm install -g node-red-contrib-mongodb2
+					echo "\nInstall UI- Node-Red..."
+					npm install -g node-red-contrib-ui
 					echo "\n Install Start Script"
-					cd $dir1
-					cd $dir2
-					pwd
-					cd init.d
-					echo "\n chmod...."
-					sudo chmod a+x node-red
-					cd ..
-					echo "\n cp...."
-					sudo cp init.d/node-red /etc/init.d/node-red
-					sudo insserv node-red
-					echo "\n check...."
-					cd node-red
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
+					npm install -g pm2
+                                        pm2 start /usr/local/bin/node-red --node-args="--max-old-space-size=128" -- -v
+                                        pm2 save
+                                        pm2 startup systemd
 }
 
 
@@ -103,8 +66,6 @@ case "$response" in
 		upgradeApt
 		nodejs
 		nodeRed
-		
-		sudo node red.js
 		;;
 	n)	echo "Close..."
 		;;
