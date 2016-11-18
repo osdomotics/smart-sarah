@@ -1,12 +1,10 @@
-smart-sarah
+﻿smart-sarah
 ===========
 
 System Service installer for Smart-SARAH Home-Automation System
 
 Services
---------
-
-    Ajenti (The admin panel your servers deserve)
+    Webmin (The admin panel your servers deserve)
     6loWPAN router for IEEE 802.15.4
     wifiap (banana-pro as wlan access point)
     OMD (Open Monitoring Distribution)
