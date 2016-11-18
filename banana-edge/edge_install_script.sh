@@ -3,7 +3,7 @@
 
 updateApt()
 {
-    pt-get -y update
+    apt-get -y update
 }
 
 upgradeApt()
