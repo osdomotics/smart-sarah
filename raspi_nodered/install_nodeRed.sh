@@ -36,8 +36,8 @@ nodeRed()
 					npm install -g node-red-contrib-coap
 					echo "\nInstall mongodb2- Node-Red..."
 					npm install -g node-red-contrib-mongodb2
-					echo "\nInstall UI- Node-Red..."
-					npm install -g node-red-contrib-ui
+					echo "\nInstall UI-Dashboard Node-Red..."
+					npm install -g node-red-dashboard
 					echo "\n Install Start Script"
 					npm install -g pm2
                                         pm2 start /usr/local/bin/node-red --node-args="--max-old-space-size=128" -- -v
