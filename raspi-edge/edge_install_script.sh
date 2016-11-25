@@ -59,6 +59,21 @@ radvd()
     cd $dir2
 }
 
+networkdebian()
+{
+	echo "\nRemove dhcpcd5..."
+	apt-get -y remove dhcpcd5 openresolv
+	systemctl disable networking.service
+	systemctl disable NetworkManager
+	systemctl enable systemd-networkd.service
+	systemctl enable systemd-resolved.service
+	rm -f /etc/resolv.conf
+	ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+	cp etc/20-dhcp.network /etc/systemd/network/20-dhcp.network
+	cd $dir1
+    cd $dir2	
+}
+
 read -p "Do you want to install Raspi-Edge-Package (y/n)? " response
 
 case "$response" in
@@ -75,6 +90,7 @@ case "$response" in
 
 		updateApt
 		upgradeApt
+		networkdebian
 		tunslip6
 		tunslip6Daemon
 		serial
