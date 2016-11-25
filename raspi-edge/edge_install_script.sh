@@ -70,6 +70,7 @@ networkdebian()
 	rm -f /etc/resolv.conf
 	ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
 	cp etc/20-dhcp.network /etc/systemd/network/20-dhcp.network
+	systemctl restart systemd-networkd
 	cd $dir1
     cd $dir2	
 }
