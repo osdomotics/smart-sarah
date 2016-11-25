@@ -91,11 +91,11 @@ case "$response" in
 
 		updateApt
 		upgradeApt
-		networkdebian
 		tunslip6
 		tunslip6Daemon
 		serial
 		radvd
+		networkdebian
 		echo "\nIf you want to use the full functionality, it is important to reboot your System."
 		read -p "Do you want to reboot your System. (y/n)? " reboot
 		
