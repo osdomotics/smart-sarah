@@ -32,6 +32,8 @@ banana-pro:
 
 Raspberry Pi 3:
 
+    Install the raspian-light image on a SD-Card and start the Raspberry Pi 3
+
     wget https://github.com/osdomotics/smart-sarah/archive/master.zip
     unzip master.zip
     cd smart-sarah-master/raspi-edge/
