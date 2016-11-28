@@ -14,9 +14,10 @@ upgradeApt()
 tunslip6()
 {
 	echo "\nInstall Tunslip6..."
-	apt-get install build-essential
-	wget https://raw.githubusercontent.com/osdomotics/osd-contiki/master/tools/tunslip6.c
-	gcc tunslip6.c -o tunslip6
+	wget https://github.com/osdomotics/osd-contiki/archive/osd.zip
+        unzip osd.zip
+	cd osd-contiki-osd/tools/
+	make tunslip6
 	chmod 766 tunslip6
 	cp tunslip6 /usr/sbin/
 	cp sbin/tunslip6.sh /usr/sbin/tunslip6.sh
