@@ -14,6 +14,7 @@ upgradeApt()
 tunslip6()
 {
 	echo "\nInstall Tunslip6..."
+	apt-get -y install unzip
 	wget https://github.com/osdomotics/osd-contiki/archive/osd.zip
         unzip osd.zip
 	cd osd-contiki-osd/tools/
