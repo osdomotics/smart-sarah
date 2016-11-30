@@ -26,12 +26,25 @@ Quickstart
 ----------
 banana-pro:
 
-    login as root
+    #login as root
     apt-get install git
     git clone https://github.com/osdomotics/smart-sarah.git
+    #6loWPAN router for IEEE 802.15.4
     cd smart-sarah/banana-edge/
     ./edge_install_script.sh
-    
+    cd ..
+    #OMD (Open Monitoring Distribution)
+    cd banana-omd
+    ./install_omd.sh
+    cd ..
+    #Webmin (The admin panel your servers deserve)
+    cd banana-webmin
+    ./install_webmin.sh
+    cd ..
+    #Node-Red (A visual web-tool for wiring the Internet of Things)
+    cd banana-nodered
+    ./install_nodeRed.sh 
+    cd ..
 
 Raspberry Pi 3:
 
