@@ -29,6 +29,9 @@ banana-pro:
     login as root
     apt-get install git
     git clone https://github.com/osdomotics/smart-sarah.git
+    cd smart-sarah/banana-edge/
+    ./edge_install_script.sh
+    
 
 Raspberry Pi 3:
 
