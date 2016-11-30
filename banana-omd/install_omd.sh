@@ -25,20 +25,22 @@ coap()
         ./configure
         make
         cp examples/coap-client /usr/local/bin/
+        cd $dir1
+        cd $dir2
         echo "\n Install COAP- END"
 }
 
 checkcoap()
 {
         omd create mysite
-        cd $dir1
-        cd $dir2
         git clone https://github.com/osdomotics/check_coap.git
         cd check_coap/
         cp check_coap* /omd/sites/mysite/lib/nagios/plugins/
         cd nagios-conf.d/
 #        cp coap_templates.cfg /omd/sites/mysite/etc/nagios/conf.d/
         cp sarah_hosts.cfg /omd/sites/mysite/etc/nagios/conf.d/
+        cd $dir1
+        cd $dir2
         echo "\n Install CHECKCOAP- END"
 }
 
