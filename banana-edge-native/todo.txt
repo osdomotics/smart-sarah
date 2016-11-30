@@ -1,0 +1,10 @@
+Basics
+
+ok    ipv6 support
+ok    boarder-router.native compile and install
+ok    radvd install paket
+ok    uart config and test
+ok    start boarder-router.native and connect to Stick Verbindung
+
+happy :-)
+
