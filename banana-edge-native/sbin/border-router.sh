@@ -13,7 +13,7 @@ echo 1 > /proc/sys/net/ipv6/conf/eth0/accept_ra
 /usr/sbin/border-router.native -B 38400 -L -v2 -s ttyS2 ${lowpanprefix}1/64 > /var/log/border-router &
 sleep 10
 ifconfig tun0 inet  up
-#ifconfig tun0 fe80::1/64
+ifconfig tun0 add fe80::1/64
 #ifconfig tun0 ${lowpanprefix}1/64
 
 # get mac address from uboot and calculate devaddr
