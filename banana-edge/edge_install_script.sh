@@ -14,13 +14,7 @@ upgradeApt()
 tunslip6()
 {
 	echo "\nInstall Tunslip6..."
-	apt-get -y install unzip build-essenzial
-	wget https://github.com/osdomotics/osd-contiki/archive/osd.zip
-        unzip osd.zip
-	cd osd-contiki-osd/tools/
-	make tunslip6
-	chmod 766 tunslip6
-	cp tunslip6 /usr/sbin/
+	cp sbin/tunslip6 /usr/sbin/
 	cp sbin/tunslip6.sh /usr/sbin/tunslip6.sh
 	cd /usr/sbin/
 	chmod 766 tunslip6.sh
@@ -45,7 +39,7 @@ radvd()
 	echo "\nInstall RADVD..."
 	apt-get install -y radvd
 	cp etc/radvd.conf /etc/radvd.conf
-    service radvd start
+	service radvd start
 }
 
 read -p "Do you want to install Raspi-Edge-Package (y/n)? " response
