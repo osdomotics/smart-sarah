@@ -4,13 +4,14 @@
 System Service installer for Smart-SARAH Home-Automation System
 
 Services
-    Webmin (The admin panel your servers deserve)
-    6loWPAN router for IEEE 802.15.4
-    wifiap (banana-pro as wlan access point)
-    OMD (Open Monitoring Distribution)
-    Linwebknx (Home Automation Software)
-    Node-Red (A visual web-tool for wiring the Internet of Things)
-    Meteor-js deploy server (run a meteor app on a banana pi/pro)    
+
+    * Webmin (The admin panel your servers deserve)
+    * 6loWPAN router for IEEE 802.15.4
+    * OMD (Open Monitoring Distribution)
+    * Node-Red (A visual web-tool for wiring the Internet of Things)
+    * wifiap (banana-pro as wlan access point)
+    * Linwebknx (Home Automation Software)
+    * Meteor-js deploy server (run a meteor app on a banana pi/pro)    
 
 Requirements
 ------------
@@ -59,14 +60,18 @@ Raspberry Pi 3:
 Supported Hardware
 ------------------
 
-    Raspberry Pi 3
-    Banana pi
-    Banana pro
-
-
+    A20-OLinuXIno-LIME2   Status: supported (beta)
+    Banana Pro            Status: fully supported (stable)
+    Banana Pi M1          Status: fully supported (stable)
+    Banana Pi M1+         Status: fully supported (stable)
+    Banana Pi R1 (router) Status: supported (stable)
+    Banana Pi M2          Status: supported (beta)
+    Orange Pi             Status: supported (beta)
+    Raspberry Pi 3        Status: supported (beta)
+    
 Planned
 -------
 
     Olimex A10-Lime
     Olimex A20-Lime
-    Olimex A20-Lime2
+
