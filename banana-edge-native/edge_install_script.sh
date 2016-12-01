@@ -44,7 +44,7 @@ radvd()
 	apt-get install -y radvd
 	cp etc/radvd.conf /etc/radvd.conf								#git link
 	cd /etc/init.d
-	radvd start
+	service radvd start
 	cd $dir1
         cd $dir2
 }
