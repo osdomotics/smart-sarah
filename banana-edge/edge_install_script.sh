@@ -39,6 +39,7 @@ radvd()
 	echo "\nInstall RADVD..."
 	apt-get install -y radvd
 	cp etc/radvd.conf /etc/radvd.conf
+        cp etc/sysctl.conf /etc/sysctl.conf
 	service radvd start
 }
 

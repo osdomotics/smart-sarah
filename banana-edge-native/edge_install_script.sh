@@ -43,10 +43,8 @@ radvd()
 	echo "\nInstall RADVD..."
 	apt-get install -y radvd
 	cp etc/radvd.conf /etc/radvd.conf								#git link
-	cd /etc/init.d
+        cp etc/sysctl.conf /etc/sysctl.conf
 	service radvd start
-	cd $dir1
-        cd $dir2
 }
 
 read -p "Do you want to install Raspi-Edge-Native-Package (y/n)? " response
