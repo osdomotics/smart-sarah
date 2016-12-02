@@ -32,7 +32,7 @@ sleep 2
 #bird -s var/run/bird6.ctl -c /etc/bird.conf
 #/etc/init.d/bird6 restart &
 # Radvd
-/etc/init.d/radvd restart &
+service radvd restart
 echo -n "done ";
 #end
 
