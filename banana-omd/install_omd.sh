@@ -15,16 +15,9 @@ instomd()
 
 coap()
 {
-        echo "\nInstall coap..."
+        echo "\nInstall coap-client"
         apt-get -y install libnagios-plugin-perl libnetaddr-ip-perl 
-        wget http://downloads.sourceforge.net/project/libcoap/coap-18/libcoap-4.0.3.tar.gz
-        tar -xzf libcoap-4.0.3.tar.gz
-        cd libcoap-4.0.3
-        apt-get -y install autoconf
-        autoconf
-        ./configure
-        make
-        cp examples/coap-client /usr/local/bin/
+        cp bin/coap-client /usr/local/bin/
         cd $dir1
         cd $dir2
         echo "\n Install COAP- END"
@@ -34,7 +27,9 @@ checkcoap()
 {
         omd create mysite
         git clone https://github.com/osdomotics/check_coap.git
-        cp ./check_coap/check_coap* /omd/sites/mysite/lib/nagios/plugins/
+        wget https://github.com/osdomotics/check_coap/archive/master.zip
+        unzip master.zip
+        cp ./check_coap-master/check_coap* /omd/sites/mysite/lib/nagios/plugins/
 #        cp ./conf.d/coap_templates.cfg /omd/sites/mysite/etc/nagios/conf.d/
         cp ./conf.d/sarah_hosts.cfg /omd/sites/mysite/etc/nagios/conf.d/
         cd $dir1
