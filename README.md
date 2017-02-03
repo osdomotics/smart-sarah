@@ -28,10 +28,11 @@ Quickstart
 banana-pro:
 
     #login as root
-    apt-get install git
-    git clone https://github.com/osdomotics/smart-sarah.git
+    apt-get install unzip
+    wget https://github.com/osdomotics/smart-sarah/archive/master.zip
+    unzip master.zip
     #6loWPAN router for IEEE 802.15.4
-    cd smart-sarah/banana-edge/
+    cd smart-sarah-master/banana-edge/
     ./edge_install_script.sh
     cd ..
     #OMD (Open Monitoring Distribution)

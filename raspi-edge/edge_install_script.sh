@@ -22,16 +22,16 @@ tunslip6()
 	chmod 766 tunslip6
 	cp tunslip6 /usr/sbin/
 	cd $dir1
-    cd $dir2
+	cd $dir2
 }
 
 tunslip6Daemon()
 {
-    echo "\nInstall Tunslip6 Daemon..."
-    cp system/tunslip6.service /lib/systemd/system/
-    systemctl enable tunslip6.service
-    cd $dir1
-    cd $dir2
+	echo "\nInstall Tunslip6 Daemon..."
+	cp system/tunslip6.service /lib/systemd/system/
+	systemctl enable tunslip6.service
+	cd $dir1
+	cd $dir2
 }
 
 serial()
@@ -41,8 +41,8 @@ serial()
         systemctl disable serial-getty@ttyS0.service
 	cp boot/cmdline.txt /boot/cmdline.txt
     	cp boot/config.txt  /boot/config.txt
-    cd $dir1
-    cd $dir2
+	cd $dir1
+	cd $dir2
 }
 
 
@@ -56,7 +56,7 @@ radvd()
         cp etc/sysctl.conf /etc/sysctl.conf
 	service radvd start
 	cd $dir1
-    cd $dir2
+	cd $dir2
 }
 
 networkdebian()
@@ -72,7 +72,7 @@ networkdebian()
 	cp etc/20-dhcp.network /etc/systemd/network/20-dhcp.network
 	systemctl restart systemd-networkd
 	cd $dir1
-    cd $dir2	
+    	cd $dir2	
 }
 
 read -p "Do you want to install Raspi-Edge-Package (y/n)? " response
@@ -80,7 +80,7 @@ read -p "Do you want to install Raspi-Edge-Package (y/n)? " response
 case "$response" in
 	y) 	echo "\nInstall Raspi-Edge-Package..."
 		
-		dir1=`pwd`
+	dir1=`pwd`
         #echo "dir1= " $dir1
         dir2=`dirname $0`
         #echo "dir2= " $dir2

@@ -1,39 +1,14 @@
-
 #!/bin/sh
 #$Id$
 
 updateApt()
 {
-	echo "\nUpdate Apt..."
-	read -p "apt-get update (y/n)? " update
-	case "$update" in
-				y)	apt-get -y update
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
+	apt-get -y update
 }
 
 upgradeApt()
 {
-	echo "\nUpgrade Apt..."
-	read -p "apt-get upgrade (y/n)? " upgrade
-	case "$upgrade" in
-				y)	apt-get -y upgrade
-					;;
-				n)	echo "Close..."
-					;;
-				*)	echo "false input"
-					;;
-			esac
-}
-
-IPV6()
-{
-	echo "\nUse IPv6..."
-	cp modprobe.d/ipv6.conf /etc/modprobe.d/ipv6.conf						#git link
+	apt-get -y upgrade
 }
 
 BorderRouter()
@@ -45,7 +20,7 @@ BorderRouter()
 	cd /usr/sbin/
 	chmod 766 border-router.sh
 	cd $dir1
-    cd $dir2
+	cd $dir2
 }
 
 BorderRouterDaemon()
@@ -57,35 +32,34 @@ BorderRouterDaemon()
 	#echo "\n insserv border-router"
 	insserv border-router
 	cd $dir1
-    cd $dir2	
+	cd $dir2	
 }
 
 serial()
 {
 	echo "\nSerial activated..."
-	#cd /etc/
-	sudo cp etc/inittab /etc/inittab										#git link
-	#cd /boot/
-	sudo cp boot/cmdline.txt /boot/cmdline.txt							#git link
+	cp etc/inittab /etc/inittab
+	cp boot/cmdline.txt /boot/cmdline.txt							#git link
 }
 
 radvd()
 {
 	echo "\nInstall RADVD..."
 	apt-get install -y radvd
-	cp etc/radvd.conf /etc/radvd.conf								#git link
+	cp etc/radvd.conf /etc/radvd.conf
+        cp etc/sysctl.conf /etc/sysctl.conf								#git link
 	cd /etc/init.d
 	radvd start
 	cd $dir1
-    cd $dir2
+	cd $dir2
 }
 
-read -p "Do you want to install Raspi-Edge-Package (y/n)? " response
+read -p "Do you want to install Raspi-Edge-Native-Package (y/n)? " response
 
 case "$response" in
-	y) 	echo "\nInstall Raspi-Edge-Package..."
+	y) 	echo "\nInstall Raspi-Edge-Native-Package..."
 		
-		dir1=`pwd`
+	dir1=`pwd`
         #echo "dir1= " $dir1
         dir2=`dirname $0`
         #echo "dir2= " $dir2
@@ -96,10 +70,9 @@ case "$response" in
 
 		updateApt
 		upgradeApt
-		IPV6
 		BorderRouter
 		BorderRouterDaemon
-#		serial
+		serial
 		radvd
 		echo "\nIf you want to use the full functionality, it is important to reboot your System."
 		read -p "Do you want to reboot your System. (y/n)? " reboot
