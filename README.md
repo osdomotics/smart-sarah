@@ -48,6 +48,29 @@ banana-pro:
     ./install_nodeRed.sh 
     cd ..
 
+A20-OLinuXIno-LIME2(beta):
+
+    #login as root
+    apt-get install unzip
+    wget https://github.com/osdomotics/smart-sarah/archive/master.zip
+    unzip master.zip
+    #6loWPAN router for IEEE 802.15.4
+    cd smart-sarah-master/banana-edge/
+    ./edge_install_script.sh
+    cd ..
+    #OMD (Open Monitoring Distribution)
+    cd banana-omd
+    ./install_omd.sh
+    cd ..
+    #Webmin (The admin panel your servers deserve)
+    cd banana-webmin
+    ./install_webmin.sh
+    cd ..
+    #Node-Red (A visual web-tool for wiring the Internet of Things)
+    cd banana-nodered
+    ./install_nodeRed.sh 
+    cd .
+    
 Raspberry Pi 3:
 
     Install the raspian-light image on a SD-Card and start the Raspberry Pi 3
