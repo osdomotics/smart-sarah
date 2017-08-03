@@ -19,9 +19,6 @@ BorderRouter()
 	echo "\nInstall border-router.native ..."
 	chmod 766 sbin/border-router.native
 	cp sbin/border-router.native /usr/sbin/
-	cp sbin/border-router.sh /usr/sbin/						#git link
-	cd /usr/sbin/
-	chmod 766 border-router.sh
 	cd $dir1
         cd $dir2
 }
@@ -29,13 +26,10 @@ BorderRouter()
 BorderRouterDaemon()
 {
 	echo "\nInstall border-router Daemon..."
-	cp init.d/border-router /etc/init.d/border-router							#git link
-	cd /etc/init.d/
-	chmod a+x border-router
-	#echo "\n insserv border-router"
-	insserv border-router
+	cp system/boarder-router.service /lib/systemd/system/
+	systemctl enable boarder-router.service
 	cd $dir1
-        cd $dir2
+    cd $dir2
 }
 
 radvd()
@@ -74,7 +68,7 @@ case "$response" in
 					;;
 				n)	echo "Close..."
 					;;
-				*)	echo "false input"
+				*)	echo "false inpyut"
 					;;
 			esac
 		;;
