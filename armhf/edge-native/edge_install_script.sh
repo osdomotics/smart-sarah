@@ -19,6 +19,7 @@ BorderRouter()
 	echo "\nInstall border-router.native ..."
 	chmod 766 sbin/border-router.native
 	cp sbin/border-router.native /usr/sbin/
+        apt-get install -y net-tools
 	cd $dir1
         cd $dir2
 }
@@ -29,7 +30,7 @@ BorderRouterDaemon()
 	cp system/boarder-router.service /lib/systemd/system/
 	systemctl enable boarder-router.service
 	cd $dir1
-    cd $dir2
+        cd $dir2
 }
 
 radvd()
@@ -64,7 +65,7 @@ case "$response" in
 		read -p "Do you want to reboot your System. (y/n)? " reboot
 		
 			case "$reboot" in
-				y)	sudo reboot 
+				y)	reboot 
 					;;
 				n)	echo "Close..."
 					;;

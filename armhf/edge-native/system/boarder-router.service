@@ -3,7 +3,7 @@ Description=tunslip6
 After=network.target
 
 [Service]
-ExecStart=/usr/sbin/boarder-router.native -B 38400 -L -s ttyUSB0 AAAA::1/64
+ExecStart=/usr/sbin/border-router.native -B 38400 -L -s ttyUSB0 AAAA::1/64
 KillMode=process
 Restart=always
 RestartSec=5
