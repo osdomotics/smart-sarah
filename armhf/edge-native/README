@@ -1,0 +1,44 @@
+Debian-Alwinner Hardware
+========================
+
+Install Debian on your arm-hf Hardware
+
+https://wiki.debian.org/InstallingDebianOn/Allwinner
+
+http://ftp.uk.debian.org/debian/dists/stretch/main/installer-armhf/current/images/netboot/SD-card-images/
+
+
+Edge-native
+===========
+
+Welcome to Edge-native, the Smart-SARAH Edge-Router distribution.
+
+The official installer supports Linux on arm-hf architectures.
+
+6lowpan-Stick
+-------------
+
+Needs a USB-6LoWPAN-Stick with slip-radio firmware and 38400 Boud
+
+Features
+--------
+
+  * IPv6 support
+
+What Edge-native contains
+-------------------------------
+
+Raspi-Edge currently comes with the following software:
+
+  * boarder-router.native
+  * radvd
+  
+
+Quick introduction
+------------------
+
+The following example illustrates how simple Edge-native is to use. First install the package matching your operating system:
+
+# sudo sh edge_install_script.sh
+
+have fun :-)
