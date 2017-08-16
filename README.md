@@ -15,6 +15,23 @@ Services
 
 Requirements
 ------------
+Debian-Alwinner Hardware
+========================
+
+Install Debian on your arm-hf Hardware
+
+https://wiki.debian.org/InstallingDebianOn/Allwinner
+
+http://ftp.uk.debian.org/debian/dists/stretch/main/installer-armhf/current/images/netboot/SD-card-images/
+
+    #login as root
+    apt-get install unzip
+    wget https://github.com/osdomotics/smart-sarah/archive/master.zip
+    unzip master.zip
+    #6loWPAN router for IEEE 802.15.4
+    cd smart-sarah-master/armhf/edge-native
+    ./edge_install_script.sh
+    cd ..
 
 Banana-Pro:
 
