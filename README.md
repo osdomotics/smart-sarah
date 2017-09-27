@@ -98,6 +98,16 @@ Raspberry Pi 3:
     sudo su
     ./edge_install_script.sh
 
+Orange Pi zero:
+   Install Armbian Linux on a sd-card:
+   https://dl.armbian.com/orangepizero/Debian_jessie_default.7z
+   #login as root pw:1234
+   wget https://github.com/osdomotics/smart-sarah/archive/master.zip
+   unzip master.zip
+   #6loWPAN router for IEEE 802.15.4 with tunslip6
+   cd smart-sarah-master/armhf/edge
+   ./edge_install_script.sh
+
 Supported Hardware
 ------------------
 
@@ -108,6 +118,7 @@ Supported Hardware
     Banana Pi R1 (router) Status: supported (stable)
     Banana Pi M2          Status: supported (beta)
     Orange Pi             Status: supported (beta)
+    orange Pi zero        Status: supported (beta)
     Raspberry Pi 3        Status: supported (beta)
     
 Planned
