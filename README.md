@@ -99,6 +99,7 @@ Raspberry Pi 3:
     ./edge_install_script.sh
 
 Orange Pi zero:
+
    Install Armbian Linux on a sd-card:
    https://dl.armbian.com/orangepizero/Debian_jessie_default.7z
    #login as root pw:1234
