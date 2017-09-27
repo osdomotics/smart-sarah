@@ -1,0 +1,7 @@
+[Match]
+Name=eth0 
+
+[Network]
+Description=pi3 eth0 DHCP
+DHCP=yes
+Address=abbb::ba27:ebff:fed5:438a/64
