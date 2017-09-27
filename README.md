@@ -100,7 +100,6 @@ Raspberry Pi 3:
 
 Orange Pi zero:
 
-<<<<<<< HEAD
     Install Armbian Linux on a sd-card:
     https://dl.armbian.com/orangepizero/Debian_jessie_default.7z
     #login as root pw:1234
