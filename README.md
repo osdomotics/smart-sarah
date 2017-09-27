@@ -99,14 +99,15 @@ Raspberry Pi 3:
     ./edge_install_script.sh
 
 Orange Pi zero:
-   Install Armbian Linux on a sd-card:
-   https://dl.armbian.com/orangepizero/Debian_jessie_default.7z
-   #login as root pw:1234
-   wget https://github.com/osdomotics/smart-sarah/archive/master.zip
-   unzip master.zip
-   #6loWPAN router for IEEE 802.15.4 with tunslip6
-   cd smart-sarah-master/armhf/edge
-   ./edge_install_script.sh
+
+    Install Armbian Linux on a sd-card:
+    https://dl.armbian.com/orangepizero/Debian_jessie_default.7z
+    #login as root pw:1234
+    wget https://github.com/osdomotics/smart-sarah/archive/master.zip
+    unzip master.zip
+    #6loWPAN router for IEEE 802.15.4 with tunslip6
+    cd smart-sarah-master/armhf/edge
+    ./edge_install_script.sh
 
 Supported Hardware
 ------------------
