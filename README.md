@@ -110,7 +110,7 @@ Orange Pi zero:
     nano system/boarder-router.service
 
     -ExecStart=/usr/sbin/tunslip6 -B 38400 -L -s ttyUSB0 fd00::1/64
-    +ExecStart=/usr/sbin/tunslip6 -B 38400 -L -s ttyGS0 fd00::1/64
+    +ExecStart=/usr/sbin/tunslip6 -B 38400 -L -s ttyS1 fd00::1/64
 
     ./edge_install_script.sh
 
