@@ -107,6 +107,11 @@ Orange Pi zero:
     unzip master.zip
     #6loWPAN router for IEEE 802.15.4 with tunslip6
     cd smart-sarah-master/armhf/edge
+    nano system/boarder-router.service
+
+    -ExecStart=/usr/sbin/tunslip6 -B 38400 -L -s ttyUSB0 fd00::1/64
+    +ExecStart=/usr/sbin/tunslip6 -B 38400 -L -s ttyGS0 fd00::1/64
+
     ./edge_install_script.sh
 
 Supported Hardware
