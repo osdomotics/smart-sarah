@@ -34,6 +34,9 @@ checkcoap()
         cp ./check_coap-master/check_coap* /omd/sites/mysite/lib/nagios/plugins/
 #        cp ./conf.d/coap_templates.cfg /omd/sites/mysite/etc/nagios/conf.d/
         cp ./conf.d/sarah_hosts.cfg /omd/sites/mysite/etc/nagios/conf.d/
+        a2dismod ssl
+        omd stop
+        omd start
         cd $dir1
         cd $dir2
         echo "\n Install CHECKCOAP- END"
