@@ -7,12 +7,24 @@ instomd()
         #gpg --keyserver keys.gnupg.net --recv-keys F8C1CA08A57B9ED7
         #gpg --armor --export F8C1CA08A57B9ED7 | apt-key add -
         # if the above command fails for any reason, server not available etc…
-        wget -q "https://labs.consol.de/repo/stable/RPM-GPG-KEY" -O - | sudo apt-key add -
+        #wget -q "https://labs.consol.de/repo/stable/RPM-GPG-KEY" -O - | sudo apt-key add -
         # Add our repository for Debian 8 (jessie):
-        echo "deb http://labs.consol.de/repo/stable/debian $(lsb_release -cs) main" > /etc/apt/sources.list.d/labs-consol-stable.list
+        #echo "deb http://labs.consol.de/repo/stable/debian $(lsb_release -cs) main" > /etc/apt/sources.list.d/labs-consol-stable.list
+        #apt-get -y update
+        #apt-get -y install omd
+        #echo "\n Install OMD- END"
+
+        # Add our key:
+        # gpg --recv-keys 24BFF712
+        # gpg --armor --export 24BFF712 | apt-key add -
+        # if the above command fails for any reason, server not available etc…
+	wget -q "https://dl.bananian.org/packages/bananian-packages.key" -O - | sudo apt-key add -
+        # Add our repository for Debian 8 (jessie):
+        echo "deb http://dl.bananian.org/packages/ jessie main" > /etc/apt/sources.list.d/bananian.list
         apt-get -y update
-        apt-get -y install omd
+        apt-get -y install omd-1.30
         echo "\n Install OMD- END"
+
 }
 
 coap()
