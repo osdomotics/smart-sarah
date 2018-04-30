@@ -19,6 +19,7 @@ BorderRouter()
 	echo "\nInstall border-router.native ..."
 	chmod 766 sbin/tunslip6
 	cp sbin/tunslip6 /usr/sbin/
+	cp interfaces.d/eth0 /etc/network/interfaces.d
         apt-get install -y net-tools
 	cd $dir1
         cd $dir2
