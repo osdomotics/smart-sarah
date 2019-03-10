@@ -94,7 +94,7 @@ Raspberry Pi 3:
 
     wget https://github.com/osdomotics/smart-sarah/archive/master.zip
     unzip master.zip
-    cd smart-sarah-master/raspi-edge/
+    cd smart-sarah-master/armhf/edge/
     sudo su
     ./edge_install_script.sh
 
