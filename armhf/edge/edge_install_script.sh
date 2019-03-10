@@ -40,6 +40,7 @@ radvd()
 	apt-get install -y radvd
 	cp etc/radvd.conf /etc/radvd.conf								#git link
         cp etc/sysctl.conf /etc/sysctl.conf
+        systemctl enable radvd.service
 	service radvd start
 }
 
